@@ -86,7 +86,7 @@ def single_result(results):
         tag = result.find("a")['href']
         web_url = f"https://www.signingsavvy.com/" + tag
         r = requests.get(web_url)
-        soup = BeautifulSoup(r.content, 'html5lib')
+        soup = BeautifulSoup(r.content, 'html.parser')
         video_tags = soup.findAll('video')
         urls = []
         for tag in video_tags:
