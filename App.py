@@ -73,7 +73,7 @@ def find_word_asl(word):
 def try_signasl(word):
     web_url = f"https://www.signasl.org/sign/{word}"
     r = requests.get(web_url)
-    soup = BeautifulSoup(r.content, 'html5lib')
+    soup = BeautifulSoup(r.content, 'html.parser')
     video_tags = soup.findAll('video')
     possible_urls = []
     for tag in video_tags:
