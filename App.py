@@ -7,7 +7,7 @@ from nltk.corpus import wordnet
 from streamlit_text_label import Selection, label_select
 
 def main():
-    txt = st.text_input("Input paragraph here")
+    txt = st.text_area("Input paragraph here")
     selections = label_select(body=txt, labels=['IDK'])
     for selection in selections:
         word = selection.text
