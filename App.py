@@ -54,7 +54,7 @@ def root_word(words):
 def find_word_asl(word):
     web_url = f"https://www.signingsavvy.com/search/{word}"
     r = requests.get(web_url)
-    soup = BeautifulSoup(r.content, 'html5lib')
+    soup = BeautifulSoup(r.content, 'html.parser')
     video_tags = soup.findAll('video')
     if len(video_tags) == 0:
         soup2 = BeautifulSoup(r.content, 'html.parser')
